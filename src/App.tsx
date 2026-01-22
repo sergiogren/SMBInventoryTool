@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
         {isAuthenticated && (
           <header className="bg-indigo-700 text-white p-4 border-b border-indigo-700">
             <div className="container mx-auto flex justify-between items-center">
@@ -52,7 +52,7 @@ function App() {
           </header>
         )}
 
-        <main className="container mx-auto p-6">
+        <main className="container mx-auto">
           <Routes>
             <Route path="/login" element={
               isAuthenticated ? <Navigate to="/" replace /> : <Login onLogin={handleLogin} />
@@ -60,7 +60,7 @@ function App() {
 
           <Route path="/" element={
             <PrivateRoute>
-              <div className="flex items-center justify-center min-h-[80vh] p-4">
+              <div className="flex items-center justify-center p-4">
                 <Card className="max-w-md w-full shadow-2xl">
                   <CardHeader className="text-center">
                     <CardTitle className="text-4xl text-indigo-700 mb-2">
