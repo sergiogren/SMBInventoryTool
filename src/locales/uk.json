@@ -1,0 +1,88 @@
+{
+  "common": {
+    "loading": "Завантаження...",
+    "error": "Помилка",
+    "save": "Зберегти",
+    "cancel": "Скасувати",
+    "delete": "Видалити",
+    "edit": "Редагувати",
+    "add": "Додати",
+    "search": "Пошук",
+    "filter": "Фільтр",
+    "export": "Експорт",
+    "import": "Імпорт"
+  },
+  "auth": {
+    "login": "Вхід",
+    "logout": "Вийти",
+    "signIn": "Увійти",
+    "signUp": "Реєстрація",
+    "welcome": "Вітаємо!",
+    "loginDescription": "Увійдіть щоб отримати доступ до системи",
+    "loginError": "Помилка входу. Спробуйте ще раз.",
+    "continueWithGoogle": "Продовжити з Google",
+    "termsAgreement": "Продовжуючи, ви погоджуєтесь з нашими",
+    "termsOfUse": "умовами використання",
+    "welcomeBack": "Ви успішно увійшли в систему SMB Tool",
+    "userGreeting": "Вітаємо, {{name}}"
+  },
+  "navigation": {
+    "dashboard": "Дашборд",
+    "inventory": "Запаси",
+    "finance": "Фінанси",
+    "settings": "Налаштування",
+    "reports": "Звіти",
+    "profile": "Профіль"
+  },
+  "dashboard": {
+    "title": "SMB Tool",
+    "welcomeMessage": "Вітаємо в SMB Tool!",
+    "description": "Твоя особиста чорна бухгалтерія",
+    "goToInventory": "Перейти до запасів",
+    "goToFinance": "Перейти до фінансів"
+  },
+  "inventory": {
+    "title": "Управління запасами",
+    "description": "Керуйте своїми запасами та інвентарем",
+    "addItem": "Додати товар",
+    "editItem": "Редагувати товар",
+    "deleteItem": "Видалити товар",
+    "itemName": "Назва товару",
+    "quantity": "Кількість",
+    "price": "Ціна",
+    "category": "Категорія",
+    "supplier": "Постачальник",
+    "totalValue": "Загальна вартість",
+    "lowStock": "Мало на складі",
+    "outOfStock": "Немає в наявності"
+  },
+  "finance": {
+    "title": "Фінансовий облік",
+    "description": "Ведіть облік доходів та витрат",
+    "income": "Доходи",
+    "expenses": "Витрати",
+    "profit": "Прибуток",
+    "revenue": "Виручка",
+    "cost": "Вартість",
+    "date": "Дата",
+    "amount": "Сума",
+    "category": "Категорія",
+    "description": "Опис",
+    "addTransaction": "Додати транзакцію",
+    "editTransaction": "Редагувати транзакцію",
+    "deleteTransaction": "Видалити транзакцію"
+  },
+  "settings": {
+    "title": "Налаштування",
+    "language": "Мова",
+    "theme": "Тема",
+    "notifications": "Сповіщення",
+    "security": "Безпека",
+    "profile": "Профіль",
+    "saveSettings": "Зберегти налаштування",
+    "settingsSaved": "Налаштування збережено"
+  },
+  "footer": {
+    "copyright": "© {{year}} SMB Tool. Всі права захищені."
+  }
+}

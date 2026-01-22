@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* Додаткові базові стилі */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+}

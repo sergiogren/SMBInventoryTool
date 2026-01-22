@@ -1,4 +1,4 @@
-# SMB Inventory Tool
+# SMB Tool
 
 Інструмент для управління інвентарем малого бізнесу (SMB - Small & Medium Business).
 

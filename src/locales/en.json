@@ -1,0 +1,88 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "welcome": "Welcome!",
+    "loginDescription": "Sign in to access the system",
+    "loginError": "Login error. Please try again.",
+    "continueWithGoogle": "Continue with Google",
+    "termsAgreement": "By continuing, you agree to our",
+    "termsOfUse": "terms of use",
+    "welcomeBack": "You have successfully logged into SMB Tool",
+    "userGreeting": "Welcome, {{name}}"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "inventory": "Inventory",
+    "finance": "Finance",
+    "settings": "Settings",
+    "reports": "Reports",
+    "profile": "Profile"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeMessage": "Welcome to SMB Tool!",
+    "description": "Your personal black accounting",
+    "goToInventory": "Go to Inventory",
+    "goToFinance": "Go to Finance"
+  },
+  "inventory": {
+    "title": "Inventory Management",
+    "description": "Manage your inventory and stock",
+    "addItem": "Add Item",
+    "editItem": "Edit Item",
+    "deleteItem": "Delete Item",
+    "itemName": "Item Name",
+    "quantity": "Quantity",
+    "price": "Price",
+    "category": "Category",
+    "supplier": "Supplier",
+    "totalValue": "Total Value",
+    "lowStock": "Low Stock",
+    "outOfStock": "Out of Stock"
+  },
+  "finance": {
+    "title": "Financial Accounting",
+    "description": "Keep track of income and expenses",
+    "income": "Income",
+    "expenses": "Expenses",
+    "profit": "Profit",
+    "revenue": "Revenue",
+    "cost": "Cost",
+    "date": "Date",
+    "amount": "Amount",
+    "category": "Category",
+    "description": "Description",
+    "addTransaction": "Add Transaction",
+    "editTransaction": "Edit Transaction",
+    "deleteTransaction": "Delete Transaction"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "notifications": "Notifications",
+    "security": "Security",
+    "profile": "Profile",
+    "saveSettings": "Save Settings",
+    "settingsSaved": "Settings saved"
+  },
+  "footer": {
+    "copyright": "© {{year}} SMB Tool. All rights reserved."
+  }
+}
