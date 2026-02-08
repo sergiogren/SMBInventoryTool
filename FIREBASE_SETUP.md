@@ -26,21 +26,25 @@
 4. Зареєструйте веб-додаток з назвою "SMB Tool"
 5. Скопіюйте конфігурацію Firebase SDK
 
-## 4. Налаштуйте конфігурацію в проекті
+## 4. Налаштуйте змінні середовища
 
-1. Відкрийте файл `src/services/firebase.ts`
-2. Замініть `firebaseConfig` на вашу реальну конфігурацію:
+1. Скопіюйте `.env.example` у `.env.local`:
+   ```bash
+   cp .env.example .env.local
+   ```
+2. Відкрийте `.env.local` і вставте ваші значення з Firebase Console:
 
-```typescript
-const firebaseConfig = {
-  apiKey: "your-actual-api-key",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "your-app-id"
-};
 ```
+VITE_FIREBASE_API_KEY=ваш-api-key
+VITE_FIREBASE_AUTH_DOMAIN=ваш-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=ваш-project-id
+VITE_FIREBASE_STORAGE_BUCKET=ваш-project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+VITE_FIREBASE_APP_ID=1:123456789:web:abcdef
+VITE_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+⚠️ Файл `.env.local` не комітиться в Git (він у `.gitignore`).
 
 ## 5. Налаштуйте домени для Google Auth
 
@@ -58,23 +62,4 @@ const firebaseConfig = {
 
 ## Безпека
 
-⚠️ **Важливо:** Ніколи не комітьте реальні ключі Firebase в Git!
-
-Додайте `src/services/firebase.ts` до `.gitignore` або використовуйте змінні середовища:
-
-```typescript
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  // ...
-};
-```
-
-І створіть файл `.env.local`:
-
-```
-VITE_FIREBASE_API_KEY=your-api-key
-VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your-project-id
-```
+✅ Ключі Firebase зберігаються у змінних середовища (`.env.local`) і не комітяться в Git.
