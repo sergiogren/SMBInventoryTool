@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from './hooks/useAuth';
 import { Login } from './components/Login';
+import { Dashboard } from './components/Dashboard';
 import { PrivateRoute } from './components/PrivateRoute';
 import { LanguageSelector } from './components/LanguageSelector';
 import { Button } from './components/ui/button';
@@ -60,37 +61,7 @@ function App() {
 
           <Route path="/" element={
             <PrivateRoute>
-              <div className="flex items-center justify-center p-4">
-                <Card className="max-w-md w-full shadow-2xl">
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-4xl text-indigo-700 mb-2">
-                      🎉 {t('auth.welcome')}
-                    </CardTitle>
-                    <CardDescription className="text-base">
-                      {t('auth.welcomeBack')}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <Button
-                      onClick={() => navigate('/inventory')}
-                      className="w-full gap-2 h-12"
-                      size="lg"
-                    >
-                      <Package className="w-5 h-5" />
-                      {t('dashboard.goToInventory')}
-                    </Button>
-                    <Button
-                      onClick={() => navigate('/finance')}
-                      variant="outline"
-                      className="w-full gap-2 h-12"
-                      size="lg"
-                    >
-                      <DollarSign className="w-5 h-5" />
-                      {t('dashboard.goToFinance')}
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+              <Dashboard />
             </PrivateRoute>
           } />
 
