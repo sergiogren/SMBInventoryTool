@@ -20,6 +20,7 @@
     "welcome": "Welcome!",
     "loginDescription": "Sign in to access the system",
     "loginError": "Login error. Please try again.",
+    "emailNotAllowed": "This email does not have access to the system. Contact the administrator.",
     "continueWithGoogle": "Continue with Google",
     "termsAgreement": "By continuing, you agree to our",
     "termsOfUse": "terms of use",

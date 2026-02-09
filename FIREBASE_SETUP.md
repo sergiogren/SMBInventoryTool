@@ -42,18 +42,26 @@ VITE_FIREBASE_STORAGE_BUCKET=ваш-project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
 VITE_FIREBASE_APP_ID=1:123456789:web:abcdef
 VITE_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
+
+# Email whitelist - тільки ці email зможуть увійти (через кому). Порожньо = дозволити всім.
+VITE_ALLOWED_EMAILS=admin@example.com,user@example.com
 ```
 
 ⚠️ Файл `.env.local` не комітиться в Git (він у `.gitignore`).
 
-## 5. Налаштуйте домени для Google Auth
+## 5. Email whitelist (опціонально)
+
+Якщо вказано `VITE_ALLOWED_EMAILS`, логін дозволений тільки для цих email (через кому).
+Якщо змінна порожня або відсутня — дозволено всім.
+
+## 6. Налаштуйте домени для Google Auth
 
 1. У Firebase Console перейдіть в Authentication → Sign-in method
 2. В розділі "Authorized domains" додайте:
    - `localhost` (для розробки)
    - Ваш домен у продакшені
 
-## 6. Тестування
+## 7. Тестування
 
 1. Запустіть проект: `npm run dev`
 2. Перейдіть на `http://localhost:5173/login`

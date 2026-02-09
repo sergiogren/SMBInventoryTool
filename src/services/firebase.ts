@@ -22,15 +22,26 @@ export const auth = getAuth(app);
 // Google Auth Provider
 export const googleProvider = new GoogleAuthProvider();
 
+// Email whitelist - comma-separated list from env
+const getAllowedEmails = (): string[] => {
+  const raw = import.meta.env.VITE_ALLOWED_EMAILS ?? '';
+  return raw
+    .split(',')
+    .map((e: string) => e.trim().toLowerCase())
+    .filter(Boolean);
+};
+
+export const isEmailAllowed = (email: string | null | undefined): boolean => {
+  if (!email) return false;
+  const allowed = getAllowedEmails();
+  if (allowed.length === 0) return true; // no whitelist = allow all
+  return allowed.includes(email.toLowerCase());
+};
+
 // Auth functions
 export const signInWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    return result.user;
-  } catch (error) {
-    console.error('Error signing in with Google:', error);
-    throw error;
-  }
+  const result = await signInWithPopup(auth, googleProvider);
+  return result.user;
 };
 
 export const logout = async () => {

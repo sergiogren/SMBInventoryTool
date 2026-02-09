@@ -9,9 +9,11 @@ import { Loader2 } from 'lucide-react';
 
 interface LoginProps {
   onLogin: () => void;
+  authError?: 'emailNotAllowed' | null;
+  onClearAuthError?: () => void;
 }
 
-export const Login: React.FC<LoginProps> = ({ onLogin }) => {
+export const Login: React.FC<LoginProps> = ({ onLogin, authError, onClearAuthError }) => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -19,20 +21,23 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const handleGoogleSignIn = async () => {
     setLoading(true);
     setError(null);
+    onClearAuthError?.();
 
     try {
       await signInWithGoogle();
       onLogin();
-    } catch (error) {
-      console.error('Login error:', error);
+    } catch (err) {
+      console.error('Login error:', err);
       setError(t('auth.loginError'));
     } finally {
       setLoading(false);
     }
   };
 
+  const displayError = authError === 'emailNotAllowed' ? t('auth.emailNotAllowed') : error;
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#f5f5f7] flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
         {/* Language Selector */}
         <div className="flex justify-end">
@@ -42,35 +47,35 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
         {/* Logo/Brand Section */}
         <div className="text-center space-y-4">
           <div>
-            <h1 className="text-3xl font-bold text-slate-800 mb-2">
+            <h1 className="text-3xl font-semibold text-[#1d1d1f] mb-2">
               {t('dashboard.title')}
             </h1>
-            <p className="text-slate-600">
+            <p className="text-[#6e6e73]">
               {t('dashboard.description')}
             </p>
           </div>
         </div>
 
         {/* Login Card */}
-        <Card className="bg-white/95 backdrop-blur-lg border-white shadow-2xl">
+        <Card className="bg-white border-[#e5e5ea] shadow-sm">
           <CardHeader className="text-center space-y-2">
-            <CardTitle className="text-2xl text-slate-800"></CardTitle>
-            <CardDescription className="text-slate-600">
+            <CardTitle className="text-2xl text-[#1d1d1f]"></CardTitle>
+            <CardDescription className="text-[#6e6e73]">
               {t('auth.loginDescription')}
             </CardDescription>
           </CardHeader>
 
           <CardContent className="space-y-4">
-            {error && (
-              <Alert variant="destructive" className="bg-red-50 border-red-200 text-red-800">
-                <AlertDescription>{error}</AlertDescription>
+            {displayError && (
+              <Alert variant="destructive" className="bg-[#fef2f2] border-[#fecaca] text-[#991b1b]">
+                <AlertDescription>{displayError}</AlertDescription>
               </Alert>
             )}
 
             <Button
               onClick={handleGoogleSignIn}
               disabled={loading}
-              className="w-full bg-white hover:bg-gray-50 text-gray-900 font-medium h-12 shadow-lg hover:shadow-xl transition-all duration-200"
+              className="w-full bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] font-medium h-12 border border-[#d2d2d7] shadow-sm"
               size="lg"
             >
               {loading ? (
@@ -99,9 +104,9 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
             </Button>
 
             <div className="text-center">
-              <p className="text-slate-500 text-sm">
+              <p className="text-[#6e6e73] text-sm">
                 {t('auth.termsAgreement')}{' '}
-                <a href="#" className="text-indigo-600 hover:text-indigo-700 underline">
+                <a href="#" className="text-[#1d1d1f] hover:underline">
                   {t('auth.termsOfUse')}
                 </a>
               </p>
@@ -111,7 +116,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
         {/* Footer */}
         <div className="text-center">
-          <p className="text-slate-400 text-sm">
+          <p className="text-[#86868b] text-sm">
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
         </div>

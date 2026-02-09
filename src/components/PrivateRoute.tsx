@@ -11,11 +11,11 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="bg-white p-8 rounded-2xl shadow-2xl">
+      <div className="min-h-screen bg-[#f5f5f7] flex items-center justify-center">
+        <div className="bg-white p-8 rounded-lg border border-[#e5e5ea] shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
-            <span className="text-gray-700">Завантаження...</span>
+            <div className="w-6 h-6 border-2 border-[#d2d2d7] border-t-[#1d1d1f] rounded-full animate-spin"></div>
+            <span className="text-[#1d1d1f]">Завантаження...</span>
           </div>
         </div>
       </div>

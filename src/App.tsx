@@ -12,7 +12,7 @@ import { LogOut, Package, DollarSign } from 'lucide-react';
 
 function App() {
   const { t } = useTranslation();
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, authError, clearAuthError } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -29,21 +29,21 @@ function App() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#f5f5f7]">
         {isAuthenticated && (
-          <header className="bg-indigo-700 text-white p-4 border-b border-indigo-700">
+          <header className="bg-white/80 backdrop-blur-md border-b border-[#d2d2d7] p-4">
             <div className="container mx-auto flex justify-between items-center">
-              <h1 className="text-2xl font-bold">SMB Tool</h1>
+              <h1 className="text-2xl font-semibold text-[#1d1d1f]">SMB Tool</h1>
               <div className="flex items-center gap-4">
                 <LanguageSelector />
-                <span className="text-sm">
+                <span className="text-sm text-[#6e6e73]">
                   {t('auth.userGreeting', { name: user?.displayName || user?.email })}
                 </span>
                 <Button
                   onClick={handleLogout}
-                  variant="destructive"
+                  variant="outline"
+                  className="gap-2 border-[#d2d2d7] text-[#1d1d1f] hover:bg-[#e8e8ed]"
                   size="sm"
-                  className="gap-2"
                 >
                   <LogOut className="w-4 h-4" />
                   {t('auth.logout')}
@@ -56,7 +56,7 @@ function App() {
         <main className="container mx-auto">
           <Routes>
             <Route path="/login" element={
-              isAuthenticated ? <Navigate to="/" replace /> : <Login onLogin={handleLogin} />
+              isAuthenticated ? <Navigate to="/" replace /> : <Login onLogin={handleLogin} authError={authError} onClearAuthError={clearAuthError} />
             } />
 
           <Route path="/" element={
